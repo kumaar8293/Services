@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btnIntentService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intent service"
+        app:layout_constraintBottom_toTopOf="@+id/btnService"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btnService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="service"
+        app:layout_constraintBottom_toTopOf="@+id/btnForgroundService"
+        app:layout_constraintEnd_toEndOf="@+id/btnIntentService"
+        app:layout_constraintStart_toStartOf="@+id/btnIntentService"
+        app:layout_constraintTop_toBottomOf="@+id/btnIntentService" />
+
+    <Button
+        android:id="@+id/btnForgroundService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="forground service"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnService"
+        app:layout_constraintStart_toStartOf="@+id/btnService"
+        app:layout_constraintTop_toBottomOf="@+id/btnService" />
+
+    <Button
+        android:id="@+id/btnNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnForgroundService"
+        app:layout_constraintStart_toStartOf="@+id/btnForgroundService"
+        app:layout_constraintTop_toBottomOf="@+id/btnForgroundService" />
+</androidx.constraintlayout.widget.ConstraintLayout>

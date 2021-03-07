@@ -1,0 +1,49 @@
+     =================   Types of Services   ==================
+
+These are the three different types of services: >
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/> API >= 28
+
+A : Foreground  > A foreground service performs some operation that is noticeable to the user.
+                    For example, an audio app would use a foreground service to play an audio track.
+                    Foreground services must display a Notification. Foreground services continue running even
+                    when the user isn't interacting with the app.
+
+                    When you use a foreground service, you must display a notification so that users
+                    are actively aware that the service is running. This notification cannot be dismissed
+                    unless the service is either stopped or removed from the foreground.
+                    To remove the service from the foreground, call stopForeground().
+
+B : Background > A background service performs an operation that isn't directly noticed by the user.
+                 For example, if an app used a service to compact its storage, that would usually be
+                 a background service.
+
+C : Bound   >   A service is bound when an application component binds to it by calling bindService().
+                A bound service offers a client-server interface that allows components to interact with
+                the service, send requests, receive results, and even do so across processes with
+                interprocess communication (IPC).
+                A bound service runs only as long as another application component is bound to it.
+
+NOTES :
+                 You can ensure that your service is available to only your app by including the android:exported
+                 attribute and setting it to false. This effectively stops other apps from starting your service,
+                 even when using an explicit intent.
+
+
+START_NOT_STICKY >  If the system kills the service after onStartCommand() returns, do not recreate
+                    the service unless there are pending intents to deliver. This is the safest option
+                    to avoid running your service when not necessary and when your application can simply
+                    restart any unfinished jobs.
+
+START_STICKY  >     If the system kills the service after onStartCommand() returns, recreate the service
+                    and call onStartCommand(),but do not redeliver the last intent.
+                    This is suitable for media players (or similar services)
+
+START_REDELIVER_INTENT  > If the system kills the service after onStartCommand() returns, recreate
+                          the service and call onStartCommand() with the last intent that was delivered to the service.
+
+===== Starting a service ======
+
+You can start a service from an activity or other application component
+by passing an Intent to startService() or startForegroundService()
+
