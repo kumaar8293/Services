@@ -50,7 +50,6 @@ class MyIntentService : IntentService("MyIntentService") {
     override fun onDestroy() {
         super.onDestroy()
         isRunning = false
-
         Log.d("MyIntentService", "onDestroy: ")
     }
 }
